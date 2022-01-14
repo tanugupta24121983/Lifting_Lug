@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/Isgec-logo.jpg</file>
+        <file>images/LIFTING.jpg</file>
+        <file>images/FLOATING_HEAD.jpg</file>
+        <file>images/Lifting_lug_channel.jpg</file>
+        <file>images/Lifting_lug_channel_cover.jpg</file>
+    </qresource>
+</RCC>
