@@ -1333,28 +1333,56 @@ void MainWindow::on_fh_cb_grade_2_activated(const QString &arg1)
 
 void MainWindow::on_le_thickness_of_lug_editingFinished()
 {
-    int fillet_value = 0.7 * ui->le_thickness_of_lug->text().toInt();
-    ui->le_fillet_lug_to_pad->setText(QString::number(fillet_value +1));
+    float fillet_value = 0.7 * ui->le_thickness_of_lug->text().toInt();
+    int fillet_value_int = 0.7 * ui->le_thickness_of_lug->text().toInt();
+    if(float(fillet_value_int) !=  fillet_value) {
+        ui->le_fillet_lug_to_pad->setText(QString::number(fillet_value_int +1));
+    }
+    else {
+        ui->le_fillet_lug_to_pad->setText(QString::number(fillet_value_int));
+    }
+
 }
 
 
 void MainWindow::on_le_thickness_of_pad_editingFinished()
 {
-    int fillet_value = 0.7 * ui->le_thickness_of_pad->text().toInt();
-    ui->le_fillet_weld_leg_size_f2->setText(QString::number(fillet_value +1));
+    float fillet_value = 0.7 * ui->le_thickness_of_pad->text().toInt();
+    int fillet_value_int = 0.7 * ui->le_thickness_of_pad->text().toInt();
+    if(float(fillet_value_int) !=  fillet_value) {
+        ui->le_fillet_weld_leg_size_f2->setText(QString::number(fillet_value_int +1));
+    }
+    else {
+        ui->le_fillet_weld_leg_size_f2->setText(QString::number(fillet_value_int));
+    }
+
 }
 
 
 void MainWindow::on_fh_le_thickness_of_lug_editingFinished()
 {
-    int fillet_value = 0.7 * ui->fh_le_thickness_of_lug->text().toInt();
-    ui->fh_le_fillet_weld_leg_size_f->setText(QString::number(fillet_value +1));
+
+    float fillet_value = 0.7 * ui->fh_le_thickness_of_lug->text().toInt();
+    int fillet_value_int = 0.7 * ui->fh_le_thickness_of_lug->text().toInt();
+    if(float(fillet_value_int) !=  fillet_value) {
+        ui->fh_le_fillet_weld_leg_size_f->setText(QString::number(fillet_value_int +1));
+    }
+    else {
+        ui->fh_le_fillet_weld_leg_size_f->setText(QString::number(fillet_value_int));
+    }
 }
 
 
 void MainWindow::on_fh_le_thickness_of_lug_2_editingFinished()
 {
-    int fillet_value = 0.7 * ui->fh_le_thickness_of_lug_2->text().toInt();
-    ui->fh_le_fillet_weld_leg_size_f_2->setText(QString::number(fillet_value +1));
+
+    float fillet_value = 0.7 * ui->fh_le_thickness_of_lug_2->text().toInt();
+    int fillet_value_int = 0.7 * ui->fh_le_thickness_of_lug_2->text().toInt();
+    if(float(fillet_value_int) !=  fillet_value) {
+        ui->fh_le_fillet_weld_leg_size_f_2->setText(QString::number(fillet_value_int +1));
+    }
+    else {
+        ui->fh_le_fillet_weld_leg_size_f_2->setText(QString::number(fillet_value_int));
+    }
 }
 
