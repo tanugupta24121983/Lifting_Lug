@@ -641,6 +641,7 @@ void MainWindow::on_pb_generate_report_clicked()
         excel->dynamicCall("Quit()");
 
     QString fileName = "C:/ISGEC-TOOLS/Lifting Lug Shell Cover.xlsx";
+    QString fileName_pdf = "C:/ISGEC-TOOLS/Lifting_Lug_Shell_Cover";
     QFile file_write(fileName);
     if(file_write.open(QIODevice::ReadWrite)) {
        excel     = new QAxObject("Excel.Application");
@@ -790,13 +791,13 @@ void MainWindow::on_pb_generate_report_clicked()
     cell->setProperty("Value", "1");
     cell = sheet->querySubObject("Cells(int,int)", 65,11);
     cell->setProperty("Value", "2");
-
-
     workbook->dynamicCall("Save()");
+    workbook->dynamicCall("ExportAsFixedFormat(int, const QString&, int, BOOL, BOOL)", 0, fileName_pdf, 0, false, false);
     workbook->dynamicCall("Close()");
     workbook->dynamicCall("Quit()");
     excel->dynamicCall("Quit()");
     file_write.close();
+
 
     QMessageBox msgBox;
     msgBox.setText("Report has been generated... ");
@@ -1008,6 +1009,7 @@ void MainWindow::on_fh_pb_check_for_shear_in_weld_clicked()
 void MainWindow::on_fh_pb_generate_report_clicked()
 {
     QString fileName = "C:/ISGEC-TOOLS/Lifting Lug for floating head.xlsx";
+    QString fileName_pdf = "C:/ISGEC-TOOLS/Lifting_Lug_floating_head";
     QFile file_write(fileName);
     if(file_write.open(QIODevice::ReadWrite)) {
        excel     = new QAxObject("Excel.Application");
@@ -1149,6 +1151,7 @@ void MainWindow::on_fh_pb_generate_report_clicked()
 
 
     workbook->dynamicCall("Save()");
+    workbook->dynamicCall("ExportAsFixedFormat(int, const QString&, int, BOOL, BOOL)", 0, fileName_pdf, 0, false, false);
     workbook->dynamicCall("Close()");
     workbook->dynamicCall("Quit()");
     excel->dynamicCall("Quit()");
@@ -1162,6 +1165,7 @@ void MainWindow::on_fh_pb_generate_report_clicked()
 void MainWindow::on_fh_pb_generate_report_2_clicked()
 {
     QString fileName = "C:/ISGEC-TOOLS/Lifting Lug for CHANNEL COVER.xlsx";
+    QString fileName_pdf = "C:/ISGEC-TOOLS/Lug_for_CHANNEL_COVER";
     QFile file_write(fileName);
     if(file_write.open(QIODevice::ReadWrite)) {
        excel     = new QAxObject("Excel.Application");
@@ -1293,6 +1297,7 @@ void MainWindow::on_fh_pb_generate_report_2_clicked()
 
 
     workbook->dynamicCall("Save()");
+    workbook->dynamicCall("ExportAsFixedFormat(int, const QString&, int, BOOL, BOOL)", 0, fileName_pdf, 0, false, false);
     workbook->dynamicCall("Close()");
     workbook->dynamicCall("Quit()");
     excel->dynamicCall("Quit()");
